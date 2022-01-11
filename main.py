@@ -1,21 +1,11 @@
 import json
 import os.path
+import requests
 
 from dotenv import load_dotenv
-
 load_dotenv()
 
-
 TOKEN = os.getenv("TOKEN")
-
-import requests
-# from fileWithToken import token
-
-#group_name = input("Введите запрос: ")
-
-#url = f"http://api.vk.com/method/wall.get?domain={group_name}&count=60&access_token={token}&v=5.131"
-#req = requests.get(url)
-#print(req.text)
 
 def get_wall_posts(group_name):
     url = f"http://api.vk.com/method/wall.get?domain={group_name}&count=60&access_token={TOKEN}&v=5.131"
@@ -40,7 +30,7 @@ def get_wall_posts(group_name):
         fresh_post_id = fresh_post_id["id"]
         fresh_posts_id.append(fresh_post_id)
 
-    """Проверка, если файла не существует, значит это первый парсинг (отправляем все новые 
+    """Проверка, если файла не существует, значит это первый парсинг (отправляем все новые
     фото). Иначе начинаем проверку и отправляем только новые фото"""
     if not os.path.exists(f"{group_name}/exist_posts_{group_name}.txt"):
         print("Файла с таким ID не существует, создаем файл!")
@@ -82,9 +72,8 @@ def get_wall_posts(group_name):
 
 
 def main():
-    print(TOKEN)
-    # group_name = input("Введите запрос: ")
-    # get_wall_posts(group_name)
+    group_name = input("Enter group name: ")
+    get_wall_posts(group_name)
 
 
 if  __name__ == "__main__":

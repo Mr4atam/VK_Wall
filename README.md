@@ -16,3 +16,8 @@ Linux: `source venv/Scripts/activate` or `source venv/bin/activate`
 ### Genereta Requirements
 
 `pip freeze > requirements.txt`
+
+### Useful
+
+editorconfig: https://techrocks.ru/2021/07/27/using-editorconfig-to-standardize-code-styles/  
+Run in terminal: `ec`
