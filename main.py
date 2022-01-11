@@ -1,8 +1,15 @@
 import json
 import os.path
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
+
+TOKEN = os.getenv("TOKEN")
+
 import requests
-from fileWithToken import token
+# from fileWithToken import token
 
 #group_name = input("Введите запрос: ")
 
@@ -11,7 +18,7 @@ from fileWithToken import token
 #print(req.text)
 
 def get_wall_posts(group_name):
-    url = f"http://api.vk.com/method/wall.get?domain={group_name}&count=60&access_token={token}&v=5.131"
+    url = f"http://api.vk.com/method/wall.get?domain={group_name}&count=60&access_token={TOKEN}&v=5.131"
     req = requests.get(url)
     src = req.json()
 
@@ -75,8 +82,9 @@ def get_wall_posts(group_name):
 
 
 def main():
-    group_name = input("Введите запрос: ")
-    get_wall_posts(group_name)
+    print(TOKEN)
+    # group_name = input("Введите запрос: ")
+    # get_wall_posts(group_name)
 
 
 if  __name__ == "__main__":
