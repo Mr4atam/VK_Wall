@@ -67,7 +67,7 @@ def get_wall_posts(group_name):
                 print(f"Что-то пошло не так c запросом ID {post_id}!")
 
     else:
-        print("Файл существует, начинаем отбирать свежее!")
+        print("Файл существует, начинаем PF,BHFTV свежее!")
 
 
 
