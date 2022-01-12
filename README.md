@@ -21,3 +21,7 @@ Linux: `source venv/Scripts/activate` or `source venv/bin/activate`
 
 editorconfig: https://techrocks.ru/2021/07/27/using-editorconfig-to-standardize-code-styles/  
 Run in terminal: `ec`
+
+### Run script
+
+`python main.py` or `python main.py -c 1`
