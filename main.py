@@ -58,6 +58,7 @@ def get_wall_posts(group_name):
 
                         else:
                             for post_item_photo in post:
+                                # DRY                                 
                                 post_photo = post_item_photo["photo"]['sizes']
                                 desired_photo = max(post_photo, key=lambda x: x['height'])
                                 photo_url = desired_photo['url']
